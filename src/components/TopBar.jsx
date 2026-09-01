@@ -28,10 +28,10 @@ function TopBar() {
 
   return (
     <>
-      <div className="w-full overflow-hidden">
-        <div className="pt-4 px-4 sm:pt-6 sm:px-6 flex justify-between items-center gap-2">
-          <div className="flex-shrink-0 border-2 border-amber-50 rounded-lg">
-            <h1 className="text-slate-900 bg-slate-100 text-sm sm:text-xl sm:text-2xl md:text-3xl font-semibold px-2 sm:px-6 py-2 sm:py-4 text-center whitespace-nowrap">
+      <div>
+        <div className="pt-4 px-4 sm:pt-6 sm:px-6 flex justify-between items-center">
+          <div className="inline-block border-2 border-amber-50 rounded-lg">
+            <h1 className="text-slate-900 bg-slate-100 text-xl sm:text-2xl md:text-3xl font-semibold px-4 sm:px-6 py-3 sm:py-4 text-center">
               Empresa Alpha
             </h1>
           </div>
@@ -49,7 +49,7 @@ function TopBar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 hover:bg-slate-700 rounded-lg transition flex-shrink-0"
+            className="md:hidden p-2 hover:bg-slate-700 rounded-lg transition"
           >
             {isMenuOpen ? (
               <X size={24} className="text-slate-50" />
@@ -61,7 +61,7 @@ function TopBar() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden flex flex-col gap-2 bg-slate-800 px-4 py-4 mt-2 w-full">
+          <nav className="md:hidden flex flex-col gap-2 bg-slate-800 px-4 py-4 mt-2">
             {menuItems.map((item) => (
               <a
                 key={item.href}
