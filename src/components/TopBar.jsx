@@ -63,15 +63,15 @@ function TopBar() {
         {isMenuOpen && (
           <nav className="md:hidden flex flex-col gap-2 bg-slate-800 px-4 py-4 mt-2 w-full">
             {menuItems.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
-                className="w-full justify-center"
                 onClick={() => setIsMenuOpen(false)}
+                className="inline-flex items-center gap-2 text-slate-50 bg-amber-500 rounded-md px-3 py-2 text-xs sm:text-sm m-1 hover:bg-amber-400 transition hover:animate-bounce w-full justify-center"
               >
                 <item.icon size={18} />
-                {item.label}
-              </Link>
+                <span className="break-words">{item.label}</span>
+              </a>
             ))}
           </nav>
         )}
