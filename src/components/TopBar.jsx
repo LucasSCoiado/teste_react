@@ -1,48 +1,80 @@
-import { User, Truck, Users, ShoppingCart, Package, Menu } from "lucide-react";
+import {
+  User,
+  Truck,
+  Users,
+  ShoppingCart,
+  Package,
+  Menu,
+  X,
+} from "lucide-react";
 import Link from "./Link";
+import { useState } from "react";
 
 function TopBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const menuItems = [
+    { href: "/cliente", icon: User, label: "Clientes" },
+    { href: "/fornecedores", icon: Truck, label: "Fornecedores" },
+    { href: "/funcionarios", icon: Users, label: "Funcionários" },
+    { href: "/pedidos", icon: ShoppingCart, label: "Pedidos" },
+    { href: "/produtos", icon: Package, label: "Produtos" },
+    { href: "/", icon: Menu, label: "Menu" },
+  ];
+
   return (
     <>
       <div>
-        <div className="pt-6 px-6 flex ">
+        <div className="pt-4 px-4 sm:pt-6 sm:px-6 flex justify-between items-center">
           <div className="inline-block border-2 border-amber-50 rounded-lg">
-            <h1 className="text-slate-900 bg-slate-100 text-2xl font-semibold sm:text-3xl px-6 py-4 text-center">
+            <h1 className="text-slate-900 bg-slate-100 text-xl sm:text-2xl md:text-3xl font-semibold px-4 sm:px-6 py-3 sm:py-4 text-center">
               Empresa Alpha
             </h1>
           </div>
+
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex gap-2">
+            {menuItems.map((item) => (
+              <Link key={item.href} href={item.href}>
+                <item.icon size={18} />
+                <span className="hidden lg:inline">{item.label}</span>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 hover:bg-slate-700 rounded-lg transition"
+          >
+            {isMenuOpen ? (
+              <X size={24} className="text-slate-50" />
+            ) : (
+              <Menu size={24} className="text-slate-50" />
+            )}
+          </button>
         </div>
-        <nav className="absolute top-1 right-2 pt-6 pr-6 flex gap-2">
-          <Link href="/cliente">
-            <User size={18} />
-            Clientes
-          </Link>
 
-          <Link href="/fornecedores">
-            <Truck size={18} />
-            Fornecedores
-          </Link>
-
-          <Link href="/funcionarios">
-            <Users size={18} />
-            Funcionários
-          </Link>
-
-          <Link href="/pedidos">
-            <ShoppingCart size={18} />
-            Pedidos
-          </Link>
-
-          <Link href="/produtos">
-            <Package size={18} />
-            Produtos
-          </Link>
-
-          <Link href="/">
-            <Menu size={18} />
-            Menu
-          </Link>
-        </nav>
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <nav className="md:hidden flex flex-col gap-2 bg-slate-800 px-4 py-4 mt-2">
+            {menuItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="w-full justify-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <item.icon size={18} />
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        )}
       </div>
     </>
   );

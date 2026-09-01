@@ -4,7 +4,7 @@ import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900 flex flex-col">
+    <div className="min-h-screen bg-slate-900 flex flex-col overflow-x-hidden">
       <TopBar />
       <main className="flex-1">
         <Body />
