@@ -2,7 +2,7 @@ import { PencilIcon, TrashIcon } from "lucide-react";
 
 function TabelaClientes({ clientes = [], onDeleteClick = () => {} }) {
   return (
-    <div className="mt-3 mx-4 sm:mx-9 overflow-x-auto">
+    <div className="mt-3 mx-0 sm:mx-9 sm:overflow-x-auto">
       {/* Desktop Table */}
       <table className="hidden sm:table min-w-full border-separate border-spacing-2 bg-slate-500 rounded-2xl text-slate-50 text-lg shadow-lg shadow-slate-900/40">
         <thead className="text-left text-sm uppercase tracking-wide">
