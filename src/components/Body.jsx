@@ -18,7 +18,7 @@ function Navbar() {
 
   const sections = [
     { name: "Clientes", id: "cliente" },
-    { name: "Fornecedor", id: "fornecedor" },
+    { name: "Fornecedores", id: "fornecedor" },
     { name: "Funcionários", id: "funcionario" },
     { name: "Pedidos", id: "pedido" },
     { name: "Produtos", id: "produto" },
@@ -84,7 +84,7 @@ function Navbar() {
           </div>
 
           <h3 id="fornecedor" className="text-start text-xl sm:text-2xl m-2">
-            Fornecedor
+            Fornecedores
           </h3>
           <div className="flex flex-col-reverse md:flex-row gap-4 p-2 md:items-center">
             <p className="flex-1 text-sm sm:text-base">
