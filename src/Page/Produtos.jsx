@@ -28,28 +28,32 @@ function Produtos() {
       <TopBar />
 
       <div className="flex-1">
-        <main className="px-4 py-8 flex justify-center items-start">
+        <main className="px-4 sm:px-6 py-6 sm:py-8 flex justify-center items-start">
           <div className="text-center text-slate-300">
-            <h2 className="text-slate-50 text-2xl font-semibold">Produtos</h2>
+            <h2 className="text-slate-50 text-2xl sm:text-3xl md:text-4xl font-semibold">
+              Produtos
+            </h2>
           </div>
         </main>
-        <div className="justify-items-center px4">
+        <div className="flex justify-center px-4 sm:px-6">
           <img
             src="/images/product-management.png"
-            className="h-48 w-106 object-top"
-            alt=""
+            className="h-auto max-h-48 w-full max-w-4xl object-contain"
+            alt="Produtos"
           />
         </div>
-        <div className="flex justify-end px-4 mt-4 max-w-5xl mx-auto">
+        <div className="flex justify-end px-4 sm:px-6 mt-4 max-w-6xl mx-auto w-full">
           <Link
-            className="rounded-lg px-4 py-2 font-semibold transition"
+            className="rounded-lg px-4 py-2 font-semibold transition text-sm sm:text-base"
             to="/produtos/cadastro"
           >
             Cadastro de produtos
           </Link>
         </div>
+        <div className="px-4 sm:px-6">
+          <TabelaProdutos produtos={produtos} onDeleteClick={deleteOnClick} />
+        </div>
       </div>
-      <TabelaProdutos produtos={produtos} onDeleteClick={deleteOnClick} />
       <Footer />
     </div>
   );

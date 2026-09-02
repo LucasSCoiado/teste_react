@@ -25,28 +25,32 @@ function Pedidos() {
     <div className="min-h-screen bg-slate-900 flex flex-col">
       <TopBar />
       <div className="flex-1">
-        <main className="px-4 py-8 flex justify-center items-start">
+        <main className="px-4 sm:px-6 py-6 sm:py-8 flex justify-center items-start">
           <div className="text-center text-slate-300">
-            <h2 className="text-slate-50 text-2xl font-semibold">Pedidos</h2>
+            <h2 className="text-slate-50 text-2xl sm:text-3xl md:text-4xl font-semibold">
+              Pedidos
+            </h2>
           </div>
         </main>
-        <div className="justify-items-center px-4">
+        <div className="flex justify-center px-4 sm:px-6">
           <img
             src="/images/pedido.png"
-            className="h-48 w-106 object-top"
+            className="h-auto max-h-48 w-full max-w-4xl object-contain"
             alt="Pedidos"
           />
         </div>
-        <div className="flex justify-end px-4 mt-4 max-w-5xl mx-auto">
+        <div className="flex justify-end px-4 sm:px-6 mt-4 max-w-6xl mx-auto w-full">
           <Link
             href="/pedidos/cadastro"
-            className="rounded-lg px-4 py-2 font-semibold transition"
+            className="rounded-lg px-4 py-2 font-semibold transition text-sm sm:text-base"
           >
             Novo pedido
           </Link>
         </div>
+        <div className="px-4 sm:px-6">
+          <TabelaPedido pedidos={pedidos} onDeleteClick={onDeleteClick} />
+        </div>
       </div>
-      <TabelaPedido pedidos={pedidos} onDeleteClick={onDeleteClick} />
       <Footer />
     </div>
   );

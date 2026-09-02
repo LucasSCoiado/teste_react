@@ -21,32 +21,34 @@ function Funcionario() {
     <div className="min-h-screen bg-slate-900 flex flex-col">
       <TopBar />
       <div className="flex-1 ">
-        <main className="px-4 py-8 flex justify-center items-start">
+        <main className="px-4 sm:px-6 py-6 sm:py-8 flex justify-center items-start">
           <div className="text-center text-slate-300">
-            <h2 className="text-slate-50 text-2xl font-semibold">
+            <h2 className="text-slate-50 text-2xl sm:text-3xl md:text-4xl font-semibold">
               Funcionários
             </h2>
           </div>
         </main>
-        <div className="justify-items-center px-4">
+        <div className="flex justify-center px-4 sm:px-6">
           <img
             src="/images/logo_funcionarios.png"
-            alt=""
-            className="h-48 w-106 object-top"
+            alt="Funcionários"
+            className="h-auto max-h-48 w-full max-w-4xl object-contain"
           />
         </div>
-        <div className="flex justify-end px-4 mt-4 max-w-5xl mx-auto">
+        <div className="flex justify-end px-4 sm:px-6 mt-4 max-w-6xl mx-auto w-full">
           <Link
             to="/funcionarios/cadastro"
-            className="rounded-lg px-4 py-2 font-semibold transition"
+            className="rounded-lg px-4 py-2 font-semibold transition text-sm sm:text-base"
           >
             Novo funcionário
           </Link>
         </div>
-        <TabelaFuncionarios
-          funcionarios={funcionarios}
-          onDeleteClick={onDeleteClick}
-        />
+        <div className="px-4 sm:px-6">
+          <TabelaFuncionarios
+            funcionarios={funcionarios}
+            onDeleteClick={onDeleteClick}
+          />
+        </div>
       </div>
       <Footer />
     </div>
