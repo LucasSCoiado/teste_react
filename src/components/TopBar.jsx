@@ -39,9 +39,11 @@ function TopBar() {
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-2">
             {menuItems.map((item) => (
-              <Link key={item.href} href={item.href}>
+              <Link key={item.href} href={item.href} className="notranslate">
                 <item.icon size={18} />
-                <span className="hidden lg:inline">{item.label}</span>
+                <span className="hidden lg:inline notranslate">
+                  {item.label}
+                </span>
               </Link>
             ))}
           </nav>
