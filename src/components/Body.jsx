@@ -25,8 +25,14 @@ function Navbar() {
   ];
 
   return (
-    <section className="px-4 py-6 sm:py-10 bg-slate-900">
-      <div className="max-w-6xl mx-auto flex flex-col items-center">
+    <section
+      className="px-4 py-6 sm:py-10 bg-slate-900 notranslate"
+      translate="no"
+    >
+      <div
+        className="max-w-6xl mx-auto flex flex-col items-center notranslate"
+        translate="no"
+      >
         <h2 className="text-slate-200 text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 sm:mb-8 text-center">
           Seja bem-vindo
         </h2>
