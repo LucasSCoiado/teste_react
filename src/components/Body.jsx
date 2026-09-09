@@ -1,9 +1,12 @@
 function Navbar() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  const scrollToMenu = () => {
+    const menu = document.getElementById("menu-principal");
+    if (menu) {
+      menu.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   const scrollToElement = (elementId) => {
@@ -37,7 +40,10 @@ function Navbar() {
           Seja bem-vindo
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 w-full">
+        <div
+          id="menu-principal"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 w-full"
+        >
           {sections.map((item) => (
             <div
               key={item.id}
@@ -83,10 +89,10 @@ function Navbar() {
           </p>
           <div className="flex justify-start ">
             <button
-              onClick={scrollToTop}
+              onClick={scrollToMenu}
               className="bg-white text-slate-600 p-3 rounded-lg m-4 text-sm sm:text-base hover:bg-slate-900 hover:text-slate-100 duration-500"
             >
-              Voltar
+              Menu
             </button>
           </div>
 
@@ -125,10 +131,10 @@ function Navbar() {
           </p>
           <div className="flex justify-end">
             <button
-              onClick={scrollToTop}
+              onClick={scrollToMenu}
               className="bg-white text-slate-600 p-3 rounded-lg m-4 text-sm sm:text-base hover:bg-slate-900 hover:text-slate-100 duration-500"
             >
-              Voltar
+              Menu
             </button>
           </div>
 
@@ -167,10 +173,10 @@ function Navbar() {
           </p>
           <div className="flex justify-start ">
             <button
-              onClick={scrollToTop}
+              onClick={scrollToMenu}
               className="bg-white text-slate-600 p-3 rounded-lg m-4 text-sm sm:text-base hover:bg-slate-900 hover:text-slate-100 duration-500"
             >
-              Voltar
+              Menu
             </button>
           </div>
           <h3 id="pedido" className="text-start text-xl sm:text-2xl m-2">
@@ -204,10 +210,10 @@ function Navbar() {
           </p>
           <div className="flex justify-end">
             <button
-              onClick={scrollToTop}
+              onClick={scrollToMenu}
               className="bg-white text-slate-600 p-3 rounded-lg m-4 text-sm sm:text-base hover:bg-slate-900 hover:text-slate-100 duration-500"
             >
-              Voltar
+              Menu
             </button>
           </div>
 
@@ -242,10 +248,10 @@ function Navbar() {
           </p>
           <div className="flex justify-start ">
             <button
-              onClick={scrollToTop}
+              onClick={scrollToMenu}
               className="bg-white text-slate-600 p-3 rounded-lg m-4 hover:bg-slate-900 hover:text-slate-100 duration-500"
             >
-              Voltar
+              Menu
             </button>
           </div>
         </div>
