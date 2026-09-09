@@ -4,11 +4,16 @@ import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900 flex flex-col overflow-x-hidden">
+    <div
+      className="min-h-screen bg-slate-900 flex flex-col overflow-x-hidden notranslate"
+      translate="no"
+    >
       <TopBar />
-      <main className="flex-1">
+
+      <main className="flex-1 notranslate" translate="no">
         <Body />
       </main>
+
       <Footer />
     </div>
   );
