@@ -23,6 +23,16 @@ function TopBar() {
 
   const { language } = useLanguage();
 
+  const scrollToMenu = () => {
+    const menu = document.getElementById("menu-principal");
+    if (menu) {
+      menu.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   const translations = {
     "pt-BR": ptBR,
     en: en,
@@ -78,6 +88,15 @@ function TopBar() {
               <span className="hidden lg:inline">{item.label}</span>
             </Link>
           ))}
+
+          <button
+            type="button"
+            onClick={scrollToMenu}
+            className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-3 py-2 text-xs sm:text-sm font-medium text-slate-50 hover:bg-amber-400 transition"
+          >
+            <Menu size={18} />
+            <span>{t.menu}</span>
+          </button>
 
           {/* Idioma */}
           <LanguageSelector />
