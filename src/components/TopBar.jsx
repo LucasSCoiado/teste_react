@@ -39,9 +39,11 @@ function TopBar() {
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-2">
             {menuItems.map((item) => (
-              <Link key={item.href} href={item.href}>
+              <Link key={item.href} href={item.href} className="notranslate">
                 <item.icon size={18} />
-                <span className="hidden lg:inline">{item.label}</span>
+                <span className="hidden lg:inline notranslate">
+                  {item.label}
+                </span>
               </Link>
             ))}
           </nav>
@@ -67,7 +69,8 @@ function TopBar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center gap-2 text-slate-50 bg-amber-500 rounded-md px-3 py-2 text-xs sm:text-sm m-1 hover:bg-amber-400 transition hover:animate-bounce w-full justify-center"
+                translate="no"
+                className="inline-flex items-center gap-2 text-slate-50 bg-amber-500 rounded-md px-3 py-2 text-xs sm:text-sm m-1 hover:bg-amber-400 transition hover:animate-bounce w-full justify-center whitespace-nowrap"
               >
                 <item.icon size={18} />
                 <span className="break-words">{item.label}</span>

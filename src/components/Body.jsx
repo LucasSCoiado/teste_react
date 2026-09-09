@@ -36,9 +36,10 @@ function Navbar() {
             <div
               key={item.id}
               onClick={() => scrollToElement(item.id)}
-              className="min-h-20 sm:min-h-24 bg-slate-700 rounded-2xl flex items-center justify-center shadow-lg hover:bg-slate-600 transition cursor-pointer p-3 sm:p-4 hover:animate-bounce"
+              translate="no"
+              className="min-h-20 sm:min-h-24 w-full min-w-0 bg-slate-700 rounded-2xl flex items-center justify-center shadow-lg hover:bg-slate-600 transition cursor-pointer p-3 sm:p-4 hover:animate-bounce"
             >
-              <h3 className="text-base sm:text-lg font-semibold text-white text-center">
+              <h3 className="text-base sm:text-lg font-semibold text-white text-center notranslate break-words leading-tight">
                 {item.name}
               </h3>
             </div>
@@ -83,7 +84,11 @@ function Navbar() {
             </button>
           </div>
 
-          <h3 id="fornecedor" className="text-start text-xl sm:text-2xl m-2">
+          <h3
+            id="fornecedor"
+            className="text-start text-xl sm:text-2xl m-2 notranslate"
+            translate="no"
+          >
             Fornecedores
           </h3>
           <div className="flex flex-col-reverse md:flex-row gap-4 p-2 md:items-center">
@@ -121,7 +126,11 @@ function Navbar() {
             </button>
           </div>
 
-          <h3 id="funcionario" className="text-end text-xl sm:text-2xl m-2">
+          <h3
+            id="funcionario"
+            className="text-end text-xl sm:text-2xl m-2 notranslate"
+            translate="no"
+          >
             Funcionários
           </h3>
           <div className="flex flex-col md:flex-row gap-4 p-2 md:items-center">
