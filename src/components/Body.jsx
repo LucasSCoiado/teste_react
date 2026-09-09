@@ -36,9 +36,10 @@ function Navbar() {
             <div
               key={item.id}
               onClick={() => scrollToElement(item.id)}
+              translate="no"
               className="min-h-20 sm:min-h-24 bg-slate-700 rounded-2xl flex items-center justify-center shadow-lg hover:bg-slate-600 transition cursor-pointer p-3 sm:p-4 hover:animate-bounce"
             >
-              <h3 className="text-base sm:text-lg font-semibold text-white text-center">
+              <h3 className="text-base sm:text-lg font-semibold text-white text-center whitespace-nowrap">
                 {item.name}
               </h3>
             </div>

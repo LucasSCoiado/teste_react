@@ -67,7 +67,8 @@ function TopBar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center gap-2 text-slate-50 bg-amber-500 rounded-md px-3 py-2 text-xs sm:text-sm m-1 hover:bg-amber-400 transition hover:animate-bounce w-full justify-center"
+                translate="no"
+                className="inline-flex items-center gap-2 text-slate-50 bg-amber-500 rounded-md px-3 py-2 text-xs sm:text-sm m-1 hover:bg-amber-400 transition hover:animate-bounce w-full justify-center whitespace-nowrap"
               >
                 <item.icon size={18} />
                 <span className="break-words">{item.label}</span>
